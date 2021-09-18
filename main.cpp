@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 #define TRIANGLE_4
@@ -10,7 +10,7 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	int num;
-	cout << "Ââåäèòå ðàçìåð ôèãóðû: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: ";
 	cin >> num;
 
 #ifdef TRIANGLE_4
