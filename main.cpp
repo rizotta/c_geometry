@@ -72,23 +72,11 @@ void main()
 #endif
 
 #ifdef CHESS_1 
-	bool flag;
 	for (int i = 0; i < num; i++)
 	{
-		if (i % 2) {
-			flag = false;
-		}
-		else {
-			flag = true;
-		}
-		for (int i = 0; i < num; i++)
+		for (int j = 0; j < num; j++)
 		{
-			if (i % 2 == flag) {
-				cout << "- ";
-			}
-			else {
-				cout << "+ ";
-			}
+			cout << char((i + j) % 2 == 0 ? '+' : '-') << " ";
 		}
 		cout << endl;
 	}
@@ -121,7 +109,7 @@ void main()
 		{
 			for (int k = 0; k < num; k++)
 			{
-				if ((j % 2 && flag == false) || (j % 2 == false && flag)) {
+				if ((j % 2 && !(flag)) || (!(j % 2)&& flag)) {
 					cout << "  ";
 				}
 				else {
@@ -130,7 +118,7 @@ void main()
 			}
 		}
 		cout << endl;
-		if (i % num == false) {
+		if (!(i % num)) {
 			flag = !flag;
 		}
 	}
