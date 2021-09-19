@@ -1,10 +1,20 @@
 ﻿#include<iostream>
 using namespace std;
 
-#define TRIANGLE_4
+//#define TRIANGLE_4
 //#define DIAMOND
 //#define CHESS_1
+#define CHESS_2
 //#define CHESS_3
+
+#define UPPER_LEFT_ANGLE	(char)218
+#define UPPER_RIGHT_ANGLE	(char)191
+#define LOWER_RIGHT_ANGLE	(char)217
+#define LOWER_LEFT_ANGLE	(char)192
+#define VERT_LINE			(char)179
+#define HORIZ_LINE			"\xC4\xC4" //(char)196
+#define WHITE_BOX			"\xDB\xDB" //(char)219
+#define BLACK_BOX			"  "
 
 void main()
 {
@@ -79,6 +89,25 @@ void main()
 			else {
 				cout << "+ ";
 			}
+		}
+		cout << endl;
+	}
+#endif
+
+#ifdef CHESS_2
+	setlocale(LC_ALL, "C");
+	num++;
+	for (int i = 0; i <= num; i++)
+	{
+		for (int j = 0; j <= num; j++)
+		{
+			if (i == 0 && j == 0) cout << UPPER_LEFT_ANGLE;
+			else if (i == 0 && j == num) cout << UPPER_RIGHT_ANGLE;
+			else if (i == num && j == 0) cout << LOWER_LEFT_ANGLE;
+			else if (i == num && j == num) cout << LOWER_RIGHT_ANGLE;
+			else if (i == 0 || i == num) cout << HORIZ_LINE;
+			else if (j == 0 || j == num) cout << VERT_LINE;
+			else cout << ((i + j) % 2 == 0 ? WHITE_BOX : BLACK_BOX);
 		}
 		cout << endl;
 	}
